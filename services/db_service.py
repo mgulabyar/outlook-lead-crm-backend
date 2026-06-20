@@ -16,7 +16,6 @@ class DBService:
         lead_data["email"] = email
         lead_data["last_contacted"] = datetime.utcnow()
 
-        # MongoDB Upsert Logic: Agar email pehle se hai to update, warna insert
         result = await cls.collection.update_one(
             {"email": email}, {"$set": lead_data}, upsert=True
         )
