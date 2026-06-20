@@ -24,7 +24,6 @@ class DBService:
             return "Lead Updated Successfully"
         else:
             return "New Lead Created in CRM"
-# otherwise return new
     @classmethod
     async def get_history(cls):
         cursor = cls.collection.find().sort("last_contacted", -1).limit(5)
