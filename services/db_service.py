@@ -7,7 +7,6 @@ load_dotenv()
 
 
 class DBService:
-    # Local MongoDB connection using your URI
     client = AsyncIOMotorClient(os.getenv("MONGO_URI"))
     db = client.get_database(os.getenv("DB_NAME"))
     collection = db.get_collection("leads")
