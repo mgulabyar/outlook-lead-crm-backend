@@ -13,7 +13,6 @@ class DBService:
 
     @classmethod
     async def upsert_lead(cls, lead_data, email):
-        # Email as a unique identifier for CRM
         lead_data["email"] = email
         lead_data["last_contacted"] = datetime.utcnow()
 
