@@ -27,7 +27,6 @@ class LeadService:
         }
         """
 
-        # MODEL UPDATED TO gpt-4o FOR STABILITY AND SPEED
         response = client.chat.completions.create(
             model="gpt-4o", 
             messages=[
