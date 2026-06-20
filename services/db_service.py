@@ -30,7 +30,6 @@ class DBService:
         cursor = cls.collection.find().sort("last_contacted", -1).limit(5)
         leads = []
         async for doc in cursor:
-            # ObjectId fix for JSON serialization
             doc["_id"] = str(doc["_id"])
             leads.append(doc)
         return leads
