@@ -27,7 +27,6 @@ class DBService:
 
     @classmethod
     async def get_history(cls):
-        # Latest 5 leads for the UI history tab
         cursor = cls.collection.find().sort("last_contacted", -1).limit(5)
         leads = []
         async for doc in cursor:
